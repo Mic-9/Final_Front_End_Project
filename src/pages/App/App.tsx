@@ -1,23 +1,40 @@
-import { useState } from "react";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <Header></Header>
+      <div className="body">
+        <div className="link-container">
+          <div className="link">
+            <h3>Global Temperature</h3>
+          </div>
+          <div className="link">
+            <h3>
+              Carbon Dioxide (CO<sub>2</sub>)
+            </h3>
+          </div>
+          <div className="link">
+            <h3>
+              Methane (CH<sub>4</sub>)
+            </h3>
+          </div>
+          <div className="link">
+            <h3>
+              Nitrous Oxide (N<sub>2</sub>O)
+            </h3>
+          </div>
+          <div className="link">
+            <h3>Artic Ice</h3>
+          </div>
+          <div className="link">
+            <h3>Global Ocean Temperature</h3>
+          </div>
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Footer></Footer>
     </>
   );
 }

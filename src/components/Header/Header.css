@@ -1,25 +1,20 @@
-.search {
+header {
+  background-color: rgb(95, 158, 160);
+  color: rgb(248, 255, 248);
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  z-index: 1;
+  padding: 5px 30px;
+
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
 }
-
-.input {
-  color: rgb(85, 107, 47);
-  width: 75%;
-  padding: 6px 8px;
-  border-radius: 15px 0px 0px 15px;
-  margin: 6px 0px;
-  border: none;
-}
-.submit {
-  padding: 5px 5px;
-  border-radius: 0px 15px 15px 0px;
-  margin: 6px 0px;
-  border: none;
-  cursor: pointer;
-}
-
-.submit:hover {
-  background-color: rgb(70, 130, 70);
+img {
+  width: 5%;
+  margin-right: 15px;
 }

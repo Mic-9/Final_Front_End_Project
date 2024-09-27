@@ -1,11 +1,12 @@
+import LogoGW from "../../img/LogoGW.png";
 import "./Header.css";
 
 const Header = () => {
   return (
-    <div>
-      <div></div>
-      <div></div>
-    </div>
+    <header>
+      <img src={LogoGW} alt="" />
+      <h1>Global Warming Dashboard</h1>
+    </header>
   );
 };
 
