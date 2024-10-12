@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
 import LogoGW from "../../img/LogoGW.png";
 import "./Header.css";
 
 const Header = () => {
   return (
     <header>
-      <img src={LogoGW} alt="" />
-      <h1>Global Warming Dashboard</h1>
+      <Link to="/">
+        <img src={LogoGW} alt="Dashboard Logo" />
+        <h1>Global Warming Dashboard</h1>
+      </Link>
     </header>
   );
 };

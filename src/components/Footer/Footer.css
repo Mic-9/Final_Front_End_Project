@@ -5,7 +5,7 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
-  padding: 5px 30px;
+  padding: 1px 20px;
 }
 
 .F-container {
@@ -17,7 +17,7 @@
 }
 
 .F-item {
-  margin: 5px 0;
+  margin: 1px 0;
 }
 
 .F-item img {
