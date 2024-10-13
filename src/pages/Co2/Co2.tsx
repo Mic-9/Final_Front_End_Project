@@ -26,6 +26,17 @@ const Co2 = ({ data }: { data: IApi }) => {
     trend: parseFloat(entry.trend),
   }));
 
+  if (!data) {
+    return (
+      <div className="container">
+        <h3>
+          Data currently unavailable. Try again later. If the problem persists,
+          please inform us at help@global-warming.org
+        </h3>
+      </div>
+    );
+  }
+
   return (
     <ResponsiveContainer className="container">
       <LineChart

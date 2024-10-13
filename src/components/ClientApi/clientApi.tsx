@@ -66,7 +66,7 @@ const useApi = () => {
         setOcean(response.data);
       })
       .catch((error) => {
-        console.error("Errore durante la chiamata API: ", error);
+        console.error("Errore durante la chiamata API:", error);
       });
   };
 
@@ -83,7 +83,3 @@ const useApi = () => {
 };
 
 export default useApi;
-
-/*questo componente non deve renderizzare ninte, deve solo gestire 
-queste chiamate api. i dati risultanti poi serviranno in altri 
-componenti per creare dei grafici che verranno renderizzati nella pagina*/
