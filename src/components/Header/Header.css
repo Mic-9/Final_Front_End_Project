@@ -18,12 +18,17 @@ header a {
   display: flex;
   align-items: center;
 }
+
+header a:hover {
+  opacity: 0.8;
+}
+
 img {
   height: 50px;
   width: auto;
-  margin-right: 15px;
+  margin-right: 30px;
 }
-h1 {
+h1,
+h4 {
   color: rgb(248, 255, 248);
-  margin: 0;
 }

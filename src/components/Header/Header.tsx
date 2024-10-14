@@ -6,7 +6,10 @@ const Header = () => {
   return (
     <header>
       <Link to="/">
-        <img src={LogoGW} alt="Dashboard Logo" />
+        <div>
+          <img src={LogoGW} alt="Dashboard Logo" />
+          <h4>Home</h4>
+        </div>
         <h1>Global Warming Dashboard</h1>
       </Link>
     </header>

@@ -61,7 +61,7 @@ const useApi = () => {
   };
   const fetchOcean = () => {
     axios
-      .get("https://global-warming.org/api/ocean-warmig-api")
+      .get("https://global-warming.org/api/ocean-warming-api")
       .then((response) => {
         setOcean(response.data);
       })
