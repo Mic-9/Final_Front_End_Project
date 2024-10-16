@@ -15,11 +15,11 @@ interface IIce {
   temperature: string;
 }
 interface IApi {
-  methane: IIce[];
+  ice: IIce[];
 }
 
 const Ice = ({ data }: { data: IApi }) => {
-  const chartData = data?.methane?.map((entry) => ({
+  const chartData = data?.ice?.map((entry) => ({
     date: entry.date,
     average: parseFloat(entry.temperature),
   }));
@@ -43,7 +43,7 @@ const Ice = ({ data }: { data: IApi }) => {
       >
         <Line
           type="monotone"
-          dataKey="temperature"
+          dataKey="average"
           stroke="#1f78b4"
           dot={{ r: 2 }}
         />

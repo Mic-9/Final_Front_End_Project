@@ -15,12 +15,12 @@ interface IOcean {
   temperature: string;
 }
 interface IApi {
-  methane: IOcean[];
+  ocean: IOcean[];
 }
 const Ocean = ({ data }: { data: IApi }) => {
-  const chartData = data?.methane?.map((entry) => ({
+  const chartData = data?.ocean?.map((entry) => ({
     date: entry.date,
-    average: parseFloat(entry.temperature),
+    temperature: parseFloat(entry.temperature),
   }));
 
   if (!data) {
