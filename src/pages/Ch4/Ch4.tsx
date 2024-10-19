@@ -18,7 +18,7 @@ interface IApi {
   methane: ICh4[];
 }
 
-const Ch4 = ({ data }: { data: IApi }) => {
+const Ch4 = ({ data }: { data: IApi | null }) => {
   const chartData = data?.methane?.map((entry) => ({
     date: entry.date,
     average: parseFloat(entry.average),
@@ -48,10 +48,10 @@ const Ch4 = ({ data }: { data: IApi }) => {
           dot={{ r: 2 }}
         />
         <CartesianGrid stroke="#e0e0e0" />
-        <XAxis dataKey="date" label={{ value: "Time", position: "bottom" }} />
+        <XAxis dataKey="date" label={{ value: "time", position: "bottom" }} />
         <YAxis
           domain={["dataMin", "dataMax"]}
-          label={{ value: "Concentration", angle: -90, position: "left" }}
+          label={{ value: "CH4 concentration", angle: -90, position: "left" }}
         />
         <Tooltip />
         <Legend verticalAlign="top" />

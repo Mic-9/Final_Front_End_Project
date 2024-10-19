@@ -51,7 +51,7 @@ const useApi = () => {
   };
   const fetchIce = () => {
     axios
-      .get("https://global-warming.org/api/artic-api")
+      .get("https://global-warming.org/api/arctic-api")
       .then((response) => {
         setIce(response.data);
       })

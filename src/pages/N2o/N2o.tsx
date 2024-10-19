@@ -18,7 +18,7 @@ interface IApi {
   nitrous: IN2o[];
 }
 
-const N2o = ({ data }: { data: IApi }) => {
+const N2o = ({ data }: { data: IApi | null }) => {
   const chartData = data?.nitrous?.map((entry) => ({
     date: entry.date,
     trend: parseFloat(entry.trend),
@@ -43,10 +43,10 @@ const N2o = ({ data }: { data: IApi }) => {
       >
         <Line type="monotone" dataKey="trend" stroke="#1f78b4" dot={{ r: 2 }} />
         <CartesianGrid stroke="#e0e0e0" />
-        <XAxis dataKey="date" label={{ value: "Time", position: "bottom" }} />
+        <XAxis dataKey="date" label={{ value: "time", position: "bottom" }} />
         <YAxis
           domain={["dataMin", "dataMax"]}
-          label={{ value: "Concentration", angle: -90, position: "left" }}
+          label={{ value: "N2O concentration", angle: -90, position: "left" }}
         />
         <Tooltip />
         <Legend verticalAlign="top" />

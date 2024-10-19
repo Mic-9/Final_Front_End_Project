@@ -10,20 +10,17 @@ import {
 } from "recharts";
 import "./Ice.css";
 
-interface IIce {
-  date: string;
-  temperature: string;
-}
 interface IApi {
-  ice: IIce[];
+  arcticData: {
+    data: {
+      [year: string]: {
+        value: number;
+      };
+    };
+  };
 }
 
-const Ice = ({ data }: { data: IApi }) => {
-  const chartData = data?.ice?.map((entry) => ({
-    date: entry.date,
-    average: parseFloat(entry.temperature),
-  }));
-
+const Ice = ({ data }: { data: IApi | null }) => {
   if (!data) {
     return (
       <div className="container">
@@ -35,23 +32,29 @@ const Ice = ({ data }: { data: IApi }) => {
     );
   }
 
+  const chartData = [];
+  for (const year in data.arcticData.data) {
+    const value = data.arcticData.data[year].value;
+    if (value >= 0) {
+      chartData.push({
+        date: year,
+        value: value,
+      });
+    }
+  }
+
   return (
     <ResponsiveContainer className="container">
       <LineChart
         data={chartData}
         margin={{ top: 50, right: 50, left: 50, bottom: 50 }}
       >
-        <Line
-          type="monotone"
-          dataKey="average"
-          stroke="#1f78b4"
-          dot={{ r: 2 }}
-        />
+        <Line type="monotone" dataKey="value" stroke="#1f78b4" dot={{ r: 2 }} />
         <CartesianGrid stroke="#e0e0e0" />
-        <XAxis dataKey="date" label={{ value: "Time", position: "bottom" }} />
+        <XAxis dataKey="date" label={{ value: "time", position: "bottom" }} />
         <YAxis
-          domain={["dataMin", "dataMax"]}
-          label={{ value: "temperature", angle: -90, position: "left" }}
+          domain={[0, 50]}
+          label={{ value: "ice extension", angle: -90, position: "left" }}
         />
         <Tooltip />
         <Legend verticalAlign="top" />

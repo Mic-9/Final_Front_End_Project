@@ -10,19 +10,12 @@ import {
 } from "recharts";
 import "./Ocean.css";
 
-interface IOcean {
-  date: string;
-  temperature: string;
-}
 interface IApi {
-  ocean: IOcean[];
+  result: {
+    [year: string]: string;
+  };
 }
-const Ocean = ({ data }: { data: IApi }) => {
-  const chartData = data?.ocean?.map((entry) => ({
-    date: entry.date,
-    temperature: parseFloat(entry.temperature),
-  }));
-
+const Ocean = ({ data }: { data: IApi | null }) => {
   if (!data) {
     return (
       <div className="container">
@@ -32,6 +25,14 @@ const Ocean = ({ data }: { data: IApi }) => {
         </h3>
       </div>
     );
+  }
+
+  const chartData = [];
+  for (const year in data.result) {
+    chartData.push({
+      date: year,
+      temperature: parseFloat(data.result[year]),
+    });
   }
 
   return (
@@ -47,10 +48,14 @@ const Ocean = ({ data }: { data: IApi }) => {
           dot={{ r: 2 }}
         />
         <CartesianGrid stroke="#e0e0e0" />
-        <XAxis dataKey="date" label={{ value: "Time", position: "bottom" }} />
+        <XAxis dataKey="date" label={{ value: "time", position: "bottom" }} />
         <YAxis
           domain={["dataMin", "dataMax"]}
-          label={{ value: "temperature", angle: -90, position: "left" }}
+          label={{
+            value: " temperature variation",
+            angle: -90,
+            position: "left",
+          }}
         />
         <Tooltip />
         <Legend verticalAlign="top" />
