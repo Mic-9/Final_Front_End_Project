@@ -51,7 +51,7 @@ const useApi = () => {
   };
   const fetchIce = () => {
     axios
-      .get("https://global-warming.org/api/artic-api")
+      .get("https://global-warming.org/api/arctic-api")
       .then((response) => {
         setIce(response.data);
       })
@@ -61,12 +61,12 @@ const useApi = () => {
   };
   const fetchOcean = () => {
     axios
-      .get("https://global-warming.org/api/ocean-warmig-api")
+      .get("https://global-warming.org/api/ocean-warming-api")
       .then((response) => {
         setOcean(response.data);
       })
       .catch((error) => {
-        console.error("Errore durante la chiamata API: ", error);
+        console.error("Errore durante la chiamata API:", error);
       });
   };
 
@@ -83,7 +83,3 @@ const useApi = () => {
 };
 
 export default useApi;
-
-/*questo componente non deve renderizzare ninte, deve solo gestire 
-queste chiamate api. i dati risultanti poi serviranno in altri 
-componenti per creare dei grafici che verranno renderizzati nella pagina*/

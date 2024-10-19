@@ -18,11 +18,22 @@ interface IApi {
   result: ITemp[];
 }
 
-const Temp = ({ data }: { data: IApi }) => {
+const Temp = ({ data }: { data: IApi | null }) => {
   const chartData = data?.result?.map((entry) => ({
     time: entry.time,
     land: parseFloat(entry.land),
   }));
+
+  if (!data) {
+    return (
+      <div className="container">
+        <h3>
+          Data currently unavailable. Try again later. If the problem persists,
+          please inform us at help@global-warming.org
+        </h3>
+      </div>
+    );
+  }
 
   return (
     <ResponsiveContainer className="container">
@@ -35,7 +46,11 @@ const Temp = ({ data }: { data: IApi }) => {
         <XAxis dataKey="time" label={{ value: "Time", position: "bottom" }} />
         <YAxis
           domain={["dataMin", "dataMax"]}
-          label={{ value: "Variation", angle: -90, position: "left" }}
+          label={{
+            value: "temperature variation",
+            angle: -90,
+            position: "left",
+          }}
         />
         <Tooltip />
         <Legend verticalAlign="top" />

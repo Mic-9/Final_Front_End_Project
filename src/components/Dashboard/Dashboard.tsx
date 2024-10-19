@@ -3,7 +3,7 @@ import "./Dashboard.css";
 
 const Dashboard = () => {
   return (
-    <div className="body">
+    <div className="main">
       <div className="link-container">
         <Link to="/Temp" className="link">
           <h3>Global Temperature</h3>
