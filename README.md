@@ -1,8 +1,16 @@
 # Global Warming Dashboard
 
-Thank to this dashboard you can check all the principal indicator of the global warming, using the [Global Warming and Climate Change APIs](https://global-warming.org/). [Try the dashboard here!](url)
+This dashboard allows users to visualize key global warming indicators. All data is fetched using the [Global Warming and Climate Change APIs](https://global-warming.org/).
 
-![](src/img/Screenshot.png)
+## Features
+
+- Interactive Charts: Utilize various chart types to explore trends over time.
+- Comprehensive Data: Access a wide range of global warming indicators, including CO2, methane, N2O and more.
+- User-Friendly Interface: Easily navigate through the data to find what you need.
+
+[Try the dashboard here!](https://global-warming-dashboard.netlify.app/)
+
+![](/Screenshot.png)
 
 ## Built With
 
